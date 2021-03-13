@@ -38,8 +38,6 @@ div .wordItem:hover{
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://unpkg.com/rita"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-  <!-- <div id="div"></div> -->
   <script>
 
   let importedTxt;
@@ -56,6 +54,9 @@ div .wordItem:hover{
   for (let i = 0; i < fruits.length; i++){
       console.log("i is " + i);
       console.log("the " + i + " number fruit is " + fruits[i]);
+      let newdiv = document.createElement("div");
+      newdiv.innerHTML = fruits[i];
+      document.getElementById('content').appendChild('newdiv');
       //Add a bit about adding DOm functionality
     
   }
@@ -69,19 +70,19 @@ div .wordItem:hover{
           }
     
   //Use this code if you want to fetch a txt file
-  // fetch('lumber.txt')
-  //     .then(response => response.text())
-  //     .then(data => {
-  //         importedTxt = data;
-  //         splitTxt();
-  //         build();
-  //     });
+  fetch('lumber.txt')
+      .then(response => response.text())
+      .then(data => {
+          importedTxt = data;
+          splitTxt();
+          build();
+      });
 
     
   // LOAD DATA + BREAK INTO WORDS
   function splitTxt(){
       // words = importedTxt.split(/\W+/);
-      importedTxt = ();
+      // importedTxt = ();
       words = importedTxt.split('');
       console.log(words);
 
@@ -93,7 +94,7 @@ div .wordItem:hover{
     for (i=0; i<words.length;i++){
         console.log(words[i]);
         let newdiv = document.createElement("div");
-        addToDom(newdiv);
+        addToDOM(newdiv);
         addInteraction(newdiv);
     }
 
@@ -117,30 +118,7 @@ div .wordItem:hover{
     }
 
 
-function randomRhyme(word){
-  let rhymes;
-
-  // if (RiTa.isNoun(word)==true){
-    rhymes = RiTa.rhymes(word);
-    if (rhymes.length > 0){
-        let randomNum = Math.floor(Math.random() * rhymes.length);
-        console.log(rhymes);
-        return rhymes[randomNum];
-    }
-    else{
-        return word;
-    }
-  // }
-  // else{
-  //   return word;
-  //
-  // }
-}
 
   </script>
-  <body>
-    <br>
-    <p>Click on words to turn them on or off.</p>
-    <div id="content"></div>
-  </body>
-<html>
+  
+</html>
