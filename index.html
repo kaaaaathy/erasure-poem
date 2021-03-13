@@ -44,6 +44,7 @@ div .wordItem:hover{
   let words;
     
   let fruits = ["orange","strawberry","durian","pineapple", "guava"];
+  let string = "What is "
     
   for (let i = 0; i < fruits.length; i++){
       console.log("i is " + i);
@@ -70,7 +71,7 @@ div .wordItem:hover{
     
   }
     
-    
+  setup();
     //finish showing how this will work on a single example!!!
   function toggleClass(element){
           element.classList.add('wordItem');
@@ -79,54 +80,42 @@ div .wordItem:hover{
           console.log("clicked");
           }
     }
+
+ // MAKE IT APPEAR IN DOM
+  function build(){
+    for (i=0; i<words.length;i++){
+        console.log(words[i]);
+        let newdiv = document.createElement("div");
+        newdiv.innerHTML = words[i];  
+        document.getElementById("content").appendChild(newdiv);
+        toggleClass(newdiv);
+    }
+
+    console.log("BUILD COMPLETE");
+
+  }
     
   //Use this code if you want to fetch a txt file
-  fetch('lumber.txt')
+  function setup(){
+    fetch('lumber.txt')
       .then(response => response.text())
       .then(data => {
           importedTxt = data;
           splitTxt();
           build();
       });
+    
+  }
 
     
   // LOAD DATA + BREAK INTO WORDS
   function splitTxt(){
       // words = importedTxt.split(/\W+/);
-      // importedTxt = ();
-      words = importedTxt.split('');
+      words = importedTxt.split(' ');
       console.log(words);
 
   }
 
-  
-  // MAKE IT APPEAR IN DOM
-  function build(){
-    for (i=0; i<words.length;i++){
-        console.log(words[i]);
-        let newdiv = document.createElement("div");
-        addToDOM(newdiv);
-        addInteraction(newdiv);
-    }
-
-    console.log("BUILD COMPLETE");
-
-  }
-
-    function addToDOM(element){
-              // newdiv.id = 'word-' + i;
-        // newdiv.classList.add("wordItem");
-              element.innerHTML = words[i];  
-              document.getElementById("content").appendChild(element);
-
-    }
-    
-    function addInteraction(element){
-          element.onclick = function(){
-              element.classList.toggle("read");
-              console.log("clicked");
-          }
-    }
 
 
 
