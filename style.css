@@ -1,6 +1,12 @@
 body {
   text-align: center;
   font-family: Arial;
+
+}
+
+#content {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .wordItem {
@@ -8,10 +14,11 @@ body {
   color:black;
   padding:20px;
   width: auto;
+  height:20px;
   margin: 10px;
 }
 
-div .wordItem:hover{
+.wordItem:hover{
   color:white;
 }
 
