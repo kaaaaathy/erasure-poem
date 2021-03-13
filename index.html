@@ -1,28 +1,146 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+<style type="text/css">
+#content {
+  padding: 100px 0;
+}
 
-    <title>Hello!</title>
+body {
+  text-align: center;
+  font-family: Arial;
+}
+
+#content {
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+}
+
+.wordItem {
+  border:1px solid black;
+  color:white;
+  padding:20px;
+  width: auto;
+  margin: 10px;
+}
+
+div .wordItem:hover{
+  color:black;
+}
+
+.read {
+  color:black;
+}
+
+</style>
+</head>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/rita"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+  <!-- <div id="div"></div> -->
+  <script>
+
+  let importedTxt;
+  let words;
     
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
+  let fruits = ["orange","strawberry","durian","pineapple", "guava"];
     
-    <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
-  </head>  
+  for (let i = 0; i < fruits.length; i++){
+      console.log("i is " + i);
+      console.log("the " + i + " number fruit is " + fruits[i]);
+      
+  }
+    
+  for (let i = 0; i < fruits.length; i++){
+      console.log("i is " + i);
+      console.log("the " + i + " number fruit is " + fruits[i]);
+      //Add a bit about adding DOm functionality
+    
+  }
+    
+    
+    //finish showing how this will work on a single example!!!
+
+          element.onclick = function(){
+          element.classList.toggle("read");
+          console.log("clicked");
+          }
+    
+  //Use this code if you want to fetch a txt file
+  // fetch('lumber.txt')
+  //     .then(response => response.text())
+  //     .then(data => {
+  //         importedTxt = data;
+  //         splitTxt();
+  //         build();
+  //     });
+
+    
+  // LOAD DATA + BREAK INTO WORDS
+  function splitTxt(){
+      // words = importedTxt.split(/\W+/);
+      importedTxt = ();
+      words = importedTxt.split('');
+      console.log(words);
+
+  }
+
+  
+  // MAKE IT APPEAR IN DOM
+  function build(){
+    for (i=0; i<words.length;i++){
+        console.log(words[i]);
+        let newdiv = document.createElement("div");
+        addToDom(newdiv);
+        addInteraction(newdiv);
+    }
+
+    console.log("BUILD COMPLETE");
+
+  }
+
+    function addToDOM(element){
+              // newdiv.id = 'word-' + i;
+        // newdiv.classList.add("wordItem");
+              element.innerHTML = words[i];  
+              document.getElementById("content").appendChild(element);
+
+    }
+    
+    function addInteraction(element){
+          element.onclick = function(){
+              element.classList.toggle("read");
+              console.log("clicked");
+          }
+    }
+
+
+function randomRhyme(word){
+  let rhymes;
+
+  // if (RiTa.isNoun(word)==true){
+    rhymes = RiTa.rhymes(word);
+    if (rhymes.length > 0){
+        let randomNum = Math.floor(Math.random() * rhymes.length);
+        console.log(rhymes);
+        return rhymes[randomNum];
+    }
+    else{
+        return word;
+    }
+  // }
+  // else{
+  //   return word;
+  //
+  // }
+}
+
+  </script>
   <body>
-    <h1>Hi there!</h1>
-    
-    <p>
-      I'm your cool new webpage. Made with <a href="https://glitch.com">Glitch</a>!
-    </p>
-
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js" defer></script>
+    <br>
+    <p>Click on words to turn them on or off.</p>
+    <div id="content"></div>
   </body>
-</html>
+<html>
