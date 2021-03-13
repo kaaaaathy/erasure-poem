@@ -1,11 +1,20 @@
-/* CSS files add styling rules to your content */
-
 body {
-  font-family: helvetica, arial, sans-serif;
-  margin: 2em;
+  text-align: center;
+  font-family: Arial;
 }
 
-h1 {
-  font-style: italic;
-  color: #373fff;
+.wordItem {
+  border:1px solid black;
+  color:black;
+  padding:20px;
+  width: auto;
+  margin: 10px;
+}
+
+div .wordItem:hover{
+  color:white;
+}
+
+.read {
+  color:white;
 }

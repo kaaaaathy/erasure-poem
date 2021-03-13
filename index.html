@@ -1,32 +1,6 @@
 <html>
 <head>
-<style type="text/css">
-#content {
-  padding: 100px 0;
-}
-
-body {
-  text-align: center;
-  font-family: Arial;
-}
-
-.wordItem {
-  border:1px solid black;
-  color:black;
-  padding:20px;
-  width: auto;
-  margin: 10px;
-}
-
-div .wordItem:hover{
-  color:black;
-}
-
-.read {
-  color:black;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
   <body>
@@ -35,90 +9,6 @@ div .wordItem:hover{
     <div id="content"></div>
   </body>
   
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/rita"></script>
-  <script>
-
-  let importedTxt;
-  let words;
-    
-  let fruits = ["orange","strawberry","durian","pineapple", "guava"];
-  let string = "What is "
-    
-  for (let i = 0; i < fruits.length; i++){
-      console.log("i is " + i);
-      console.log("the " + i + " number fruit is " + fruits[i]);
-      
-  }
-    
-  for (let i = 0; i < fruits.length; i++){
-      console.log("i is " + i);
-      console.log("the " + i + " number fruit is " + fruits[i]);
-    
-    //creating new div
-      let newdiv = document.createElement("div");
-    
-    //set inner HTML to the array
-      newdiv.innerHTML = fruits[i];
-    
-    //you need to appendChild to add it to the body of the HTML doc.
-      document.body.appendChild(newdiv);
-    
-    //this is a function to add a new class
-      toggleClass(newdiv);
-
-    
-  }
-    
-  setup();
-    //finish showing how this will work on a single example!!!
-  function toggleClass(element){
-          element.classList.add('wordItem');
-          element.onclick = function(){
-          element.classList.toggle("read");
-          console.log("clicked");
-          }
-    }
-
- // MAKE IT APPEAR IN DOM
-  function build(){
-    for (i=0; i<words.length;i++){
-        console.log(words[i]);
-        let newdiv = document.createElement("div");
-        newdiv.innerHTML = words[i];  
-        document.getElementById("content").appendChild(newdiv);
-        toggleClass(newdiv);
-    }
-
-    console.log("BUILD COMPLETE");
-
-  }
-    
-  //Use this code if you want to fetch a txt file
-  function setup(){
-    fetch('lumber.txt')
-      .then(response => response.text())
-      .then(data => {
-          importedTxt = data;
-          splitTxt();
-          build();
-      });
-    
-  }
-
-    
-  // LOAD DATA + BREAK INTO WORDS
-  function splitTxt(){
-      // words = importedTxt.split(/\W+/);
-      words = importedTxt.split(' ');
-      console.log(words);
-
-  }
-
-
-
-
-  </script>
+  <script type ="text/javascript" src = "script.js"></script>
   
 </html>
