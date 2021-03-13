@@ -10,16 +10,9 @@ body {
   font-family: Arial;
 }
 
-#content {
-  width:100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap:wrap;
-}
-
 .wordItem {
   border:1px solid black;
-  color:white;
+  color:black;
   padding:20px;
   width: auto;
   margin: 10px;
@@ -36,6 +29,13 @@ div .wordItem:hover{
 </style>
 </head>
 
+  <body>
+    <br>
+    <p>Click on words to turn them on or off.</p>
+    <div id="content"></div>
+  </body>
+  
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://unpkg.com/rita"></script>
   <script>
@@ -54,20 +54,31 @@ div .wordItem:hover{
   for (let i = 0; i < fruits.length; i++){
       console.log("i is " + i);
       console.log("the " + i + " number fruit is " + fruits[i]);
+    
+    //creating new div
       let newdiv = document.createElement("div");
+    
+    //set inner HTML to the array
       newdiv.innerHTML = fruits[i];
-      document.getElementById('content').appendChild('newdiv');
-      //Add a bit about adding DOm functionality
+    
+    //you need to appendChild to add it to the body of the HTML doc.
+      document.body.appendChild(newdiv);
+    
+    //this is a function to add a new class
+      toggleClass(newdiv);
+
     
   }
     
     
     //finish showing how this will work on a single example!!!
-
+  function toggleClass(element){
+          element.classList.add('wordItem');
           element.onclick = function(){
           element.classList.toggle("read");
           console.log("clicked");
           }
+    }
     
   //Use this code if you want to fetch a txt file
   fetch('lumber.txt')
