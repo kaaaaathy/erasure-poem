@@ -11,37 +11,40 @@
   }
 
 
-  let string = "everything tethers back to our planet, did you forget? the soft bodies, the ferns, the copper ores that lay sleeping it was only our data structures, our taxonomies and our desire for entrapment of abundance, which gave them names as things to be atomized into boxes"
-  // let stringArray = string.split(/[.,!?]/); //split on punctation only — you can Google "regular expressions" to add more logic
-  let stringArray = string.split(" ");
+//   let string = "everything tethers back to our planet, did you forget? the soft bodies, the ferns, the copper ores that lay sleeping it was only our data structures, our taxonomies and our desire for entrapment of abundance, which gave them names as things to be atomized into boxes"
+//   // let stringArray = string.split(/[.,!?]/); //split on punctation only — you can Google "regular expressions" to add more logic
+//   let stringArray = string.split(" ");
 
-  console.log(stringArray);
+//   console.log(stringArray);
 
 
-  //introduce Create Element + Append
-  for (let i = 0; i < stringArray.length; i++){
-      console.log("i is " + i);
-      console.log("the " + i + " number word is " + stringArray[i]);
+//   //introduce Create Element + Append
+//   for (let i = 0; i < stringArray.length; i++){
+//       console.log("i is " + i);
+//       console.log("the " + i + " number word is " + stringArray[i]);
     
-    //creating new div
-      let newdiv = document.createElement("div");
+//     //creating new div
+//       let newdiv = document.createElement("div");
     
-    //set inner HTML to the array
-      newdiv.innerHTML = stringArray[i] + "&nbsp";
+//     //set inner HTML to the array
+//       newdiv.innerHTML = stringArray[i] + "&nbsp";
     
-    //you need to appendChild to add it to the body of the HTML doc.
-      document.getElementById('content').appendChild(newdiv);
+//     //you need to appendChild to add it to the body of the HTML doc.
+//       document.getElementById('content').appendChild(newdiv);
     
-    //add class "wordItem" so you can add styling
-      newdiv.classList.add('wordItem'); 
+//     //add class "wordItem" so you can add styling
+//       newdiv.classList.add('wordItem'); 
       
-    //this is a function to add a class
-      addClass(newdiv);
+//     //this is a function to add a class
+//       // addClass(newdiv);
       
-    //this is a function to add class toggle behavior
-      // toggleClass(newdiv);
+//     //this is a function to add class toggle behavior
+//       // toggleClass(newdiv);
 
-}
+// }
+
+
+//   this function will add a class styles 
 
 function addClass(element){
   element.onclick = function(){
@@ -51,7 +54,7 @@ function addClass(element){
 }
 
     
-//   //introduce ClassList
+//   this function will toggle the class styles on and off
   function toggleClass(element){    
           element.onclick = function() {
             element.classList.toggle("read");
@@ -95,7 +98,7 @@ function addClass(element){
 
  // MAKE IT APPEAR IN DOM
 //   function build(){
-//     for (i=0; i<words.length;i++){
+//     for (let i=0; i<words.length;i++){
 //         console.log(words[i]);
 //         let newdiv = document.createElement("div");
 //         newdiv.innerHTML = words[i];  
