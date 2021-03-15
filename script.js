@@ -11,7 +11,7 @@
   }
 
 
-  let string = "Two roads diverged in a yellow wood, and sorry I could not travel both, and be one traveler, long I stood and looked down one as far as I could, to where it bent in the undergrowth"
+  let string = ""
   let stringArray = string.split(' ');
   console.log(stringArray);
 
@@ -25,13 +25,13 @@
       let newdiv = document.createElement("div");
     
     //set inner HTML to the array
-      newdiv.innerHTML = stringArray[i];
+      newdiv.innerHTML = stringArray[i] + "&nbsp";
     
     //you need to appendChild to add it to the body of the HTML doc.
       document.getElementById('content').appendChild(newdiv);
     
     //add class "wordItem" so you can add styling
-      // newdiv.classList.add('wordItem'); 
+      newdiv.classList.add('wordItem'); 
       
     //this is a function to add class toggle behavior
       // toggleClass(newdiv);
