@@ -2,35 +2,36 @@
 //    Example 1: Arrays + For Loops
 //—————————————————————————————————————————
 
-  let fruits = ["orange","strawberry","durian","pineapple", "guava"];
+//   let fruits = ["orange","strawberry","durian","pineapple", "guava"];
 
-  //introduce Array + For loop
-  for (let i = 0; i < fruits.length; i++){
-      console.log("i is " + i);
-      console.log("the " + i + " number fruit is " + fruits[i]);
-  }
+//   //introduce Array + For loop
+//   for (let i = 0; i < fruits.length; i++){
+//       console.log("i is " + i);
+//       console.log("the " + i + " number fruit is " + fruits[i]);
+//   }
 
 
-//   let string = "everything tethers back to our planet, did you forget? the soft bodies, the ferns, the copper ores that lay sleeping it was only our data structures, our taxonomies and our desire for entrapment of abundance, which gave them names as things to be atomized into boxes"
-//   // let stringArray = string.split(/[.,!?]/); //split on punctation only — you can Google "regular expressions" to add more logic
-//   let stringArray = string.split(" ");
+  let string = "everything tethers back to our planet, did you forget? the soft bodies, the ferns, the copper ores that lay sleeping it was only our data structures, our taxonomies and our desire for entrapment of abundance, which gave them names as things to be atomized into boxes"
+  // let stringArray = string.split(/[.,!?]/); //split on punctation only — you can Google "regular expressions" to add more logic
+  let stringArray = string.split(" ");
 
-//   console.log(stringArray);
+
+  console.log(stringArray);
 
 
 //   //introduce Create Element + Append
-//   for (let i = 0; i < stringArray.length; i++){
+  for (let i = 0; i < stringArray.length; i++){
 //       console.log("i is " + i);
 //       console.log("the " + i + " number word is " + stringArray[i]);
     
 //     //creating new div
-//       let newdiv = document.createElement("div");
+      let newdiv = document.createElement("div");
     
 //     //set inner HTML to the array
-//       newdiv.innerHTML = stringArray[i] + "&nbsp";
+      newdiv.innerHTML = stringArray[i] + "&nbsp";
     
 //     //you need to appendChild to add it to the body of the HTML doc.
-//       document.getElementById('content').appendChild(newdiv);
+      document.body.appendChild(newdiv);
     
 //     //add class "wordItem" so you can add styling
 //       newdiv.classList.add('wordItem'); 
@@ -41,7 +42,7 @@
 //     //this is a function to add class toggle behavior
 //       // toggleClass(newdiv);
 
-// }
+}
 
 
 //   this function will add a class styles 
