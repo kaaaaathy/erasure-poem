@@ -10,8 +10,9 @@ body {
 }
 
 .wordItem {
-  border:1px solid black;
-  color:black;
+  border:1px solid blue;
+  color:blue;
+  border-radius:50px;
   padding:20px;
   width: auto;
   height:20px;

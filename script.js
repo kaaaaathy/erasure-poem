@@ -34,13 +34,14 @@
       document.body.appendChild(newdiv);
     
 //     //add class "wordItem" so you can add styling
-//       newdiv.classList.add('wordItem'); 
+      newdiv.classList.add('wordItem'); 
+    
       
 //     //this is a function to add a class
-//       // addClass(newdiv);
+      // addClass(newdiv);
       
 //     //this is a function to add class toggle behavior
-//       // toggleClass(newdiv);
+      toggleClass(newdiv);
 
 }
 
@@ -53,6 +54,7 @@ function addClass(element){
   }
   
 }
+
 
     
 //   this function will toggle the class styles on and off
@@ -77,6 +79,8 @@ function addClass(element){
   // createPoem();
 
 //LOAD A TEXT FILE
+
+
 //   function createPoem(){
 //     fetch('lumber.txt')
 //       .then(response => response.text())
