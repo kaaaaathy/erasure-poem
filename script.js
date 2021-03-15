@@ -31,24 +31,24 @@
       document.getElementById('content').appendChild(newdiv);
     
     //add class "wordItem" so you can add styling
-      newdiv.classList.add('wordItem'); 
+      // newdiv.classList.add('wordItem'); 
       
     //this is a function to add class toggle behavior
-      toggleClass(newdiv);
+      // toggleClass(newdiv);
 
   }
     
-  //introduce ClassList
-  function toggleClass(element){    
-          element.onclick = function() {
-            element.classList.toggle("read");
-            console.log("clicked"); //tell me that it is clicked
-          } 
-    }
+//   //introduce ClassList
+//   function toggleClass(element){    
+//           element.onclick = function() {
+//             element.classList.toggle("read");
+//             console.log("clicked"); //tell me that it is clicked
+//           } 
+//     }
 
 
 //—————————————————————————————————————————————————
-//    Example 2: Split an Array + Load a Text File
+//    Example 2: Load a Text File, use functions to tie everything together
 //—————————————————————————————————————————————————
 
   let importedTxt;
@@ -56,10 +56,10 @@
     
 
 //uncomment this to run it
-  // setup();
+  // createPoem();
 
-//USE THIS CODE IF YOU WANT TO LOAD A TEXT FILE
-//   function setup(){
+//LOAD A TEXT FILE
+//   function createPoem(){
 //     fetch('lumber.txt')
 //       .then(response => response.text())
 //       .then(data => {
@@ -73,7 +73,6 @@
     
   // LOAD DATA + BREAK INTO WORDS
   // function splitTxt(text){
-  //     // words = importedTxt.split(/\W+/); Use this regular expression instead of white space if you want to split on every non-A-Z character
   //     words = text.split(' ');
   //     console.log(words);
   // }

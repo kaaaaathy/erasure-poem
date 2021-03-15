@@ -18,9 +18,10 @@ body {
   margin: 10px;
 }
 
-.wordItem:hover{
+
+/* .wordItem:hover{
   color:white;
-}
+} */
 
 .read {
   color:white;
