@@ -11,8 +11,10 @@
   }
 
 
-  let string = ""
-  let stringArray = string.split(' ');
+  let string = "everything tethers back to our planet, did you forget? the soft bodies, the ferns, the copper ores that lay sleeping it was only our data structures, our taxonomies and our desire for entrapment of abundance, which gave them names as things to be atomized into boxes"
+  // let stringArray = string.split(/[.,!?]/); //split on punctation only — you can Google "regular expressions" to add more logic
+  let stringArray = string.split(" ");
+
   console.log(stringArray);
 
 
@@ -33,18 +35,30 @@
     //add class "wordItem" so you can add styling
       newdiv.classList.add('wordItem'); 
       
+    //this is a function to add a class
+      addClass(newdiv);
+      
     //this is a function to add class toggle behavior
       // toggleClass(newdiv);
 
+}
+
+function addClass(element){
+  element.onclick = function(){
+    element.classList.add('read');
   }
+  
+}
+
     
 //   //introduce ClassList
-//   function toggleClass(element){    
-//           element.onclick = function() {
-//             element.classList.toggle("read");
-//             console.log("clicked"); //tell me that it is clicked
-//           } 
-//     }
+  function toggleClass(element){    
+          element.onclick = function() {
+            element.classList.toggle("read");
+            console.log("clicked"); //tell me that it is clicked
+          } 
+    }
+
 
 
 //—————————————————————————————————————————————————
