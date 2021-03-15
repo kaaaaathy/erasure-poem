@@ -28,7 +28,7 @@
       let newdiv = document.createElement("div");
     
 //     //set inner HTML to the array
-      newdiv.innerHTML = stringArray[i] + "&nbsp";
+      newdiv.innerHTML = stringArray[i];
     
 //     //you need to appendChild to add it to the body of the HTML doc.
       document.body.appendChild(newdiv);
